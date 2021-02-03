@@ -1,0 +1,105 @@
+<div class="container-fluid p-md-5">
+  <div class="row my-3">
+    <div class="col-md-5">
+      <h1 class="font-weight-bolder">Netflix Originals</h1>
+      <p class="largerP">
+        Netflix is the home of amazing original programming that you can’t find
+        anywhere else. Movies, TV shows, specials and more, it’s all tailored
+        specifically to you.
+      </p>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12">
+      <h5>Popular on Netflix</h5>
+      <div class="row my-3">
+        <div *ngIf="isTrueLoading1" class="col-md-12 text-center">
+          <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+          </div>
+        </div>
+        <div *ngFor="let movie of Popular" class="col-md-3">
+          <img
+            [routerLink]="['/movieDetails', movie.id]"
+            [src]="imgURL + movie.backdrop_path"
+            class="w-100"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12">
+      <h5>Top Rated on Netflix</h5>
+      <div class="row my-3">
+        <div *ngIf="isTrueLoading2" class="col-md-12 text-center">
+          <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+          </div>
+        </div>
+        <div *ngFor="let movie of TopRated" class="col-md-3">
+          <img
+            [routerLink]="['/movieDetails', movie.id]"
+            [src]="imgURL + movie.backdrop_path"
+            class="w-100"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12">
+      <h5>Upcoming on Netflix</h5>
+      <div class="row my-3">
+        <div *ngIf="isTrueLoading3" class="col-md-12 text-center">
+          <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+          </div>
+        </div>
+        <div *ngFor="let movie of upcoming" class="col-md-3">
+          <img
+            [routerLink]="['/movieDetails', movie.id]"
+            [src]="imgURL + movie.backdrop_path"
+            class="w-100"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

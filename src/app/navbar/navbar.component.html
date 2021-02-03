@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" routerLink="/movies">
+    <img class="" src="../assets/images/580b57fcd9996e24bc43c529.png" alt="" />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="isLogin"
+          routerLinkActive="active"
+          routerLink="/movies"
+          >Movies <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="isLogin"
+          routerLinkActive="active"
+          routerLink="/people"
+          >Actors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/tv"
+          *ngIf="isLogin"
+          >On TV</a
+        >
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item mx-md-2">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/register"
+          *ngIf="!isLogin"
+          >Register <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item mx-md-2">
+        <a
+          *ngIf="!isLogin"
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/login"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item mx-md-2">
+        <a
+          *ngIf="isLogin"
+          class="nav-link"
+          (click)="logout()"
+          routerLinkActive="active"
+          routerLink="/login"
+          >Logout</a
+        >
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        *ngIf="isLogin"
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="search"
+        [(ngModel)]="change"
+        (input)="changeFunction(change)"
+      />
+    </form>
+  </div>
+</nav>

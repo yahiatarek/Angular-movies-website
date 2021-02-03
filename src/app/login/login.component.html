@@ -1,0 +1,41 @@
+<form
+  [formGroup]="loginForm"
+  class="container py-md-5"
+  (ngSubmit)="loginOnSubmit()"
+>
+  <div *ngIf="error" class="alert border border-danger">
+    {{ error }}
+  </div>
+  <label>Email:</label>
+  <input formControlName="email" type="email" class="form-control form-group" />
+  <!-- <div
+    *ngIf="loginForm.get('email').errors && loginForm.get('email').touched"
+    class="alert border border-danger"
+  >
+    <p *ngIf="loginForm.get('email').errors.required">Name required</p>
+    <p *ngIf="loginForm.get('email').errors.email">Email invalid</p>
+  </div> -->
+  <label>Password:</label>
+  <input
+    formControlName="password"
+    type="password"
+    class="form-control form-group"
+  />
+  <!-- <div
+    *ngIf="
+      loginForm.get('password').errors && loginForm.get('password').touched
+    "
+    class="alert border border-danger"
+  >
+    <p *ngIf="loginForm.get('password').errors.required">Password required</p>
+    <p *ngIf="loginForm.get('password').errors.maxlength">Max length 10</p>
+    <p *ngIf="loginForm.get('password').errors.pattern">
+      Password should include min 3 letters or more
+    </p>
+  </div> -->
+  <button class="btn btn-lg" type="submit">Submit</button>
+  <div class="d-flex justify-content-left my-3">
+    <p>Donot have an account?</p>
+    <a class="mx-2" routerLink="/register">Register now</a>
+  </div>
+</form>

@@ -1,0 +1,51 @@
+<div class="container-fluid p-md-5">
+  <div class="row my-3">
+    <div class="col-md-5">
+      <h1 class="font-weight-bolder">Netflix Originals</h1>
+      <p class="largerP">
+        Netflix is the home of amazing original programming that you can’t find
+        anywhere else. Movies, TV shows, specials and more, it’s all tailored
+        specifically to you.
+      </p>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12">
+      <h5>Popular on TV</h5>
+      <div class="row">
+        <div *ngIf="isTvLoaded" class="col-md-12 text-center">
+          <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div *ngFor="let movie of popularTv" class="col-md-4">
+          <div class="text-center position-relative">
+            <img
+              [src]="imgURL + movie.backdrop_path"
+              class="w-100 my-3"
+              alt=""
+            />
+            <h6>{{ movie.name }}{{ movie.title }}</h6>
+            <p>{{ movie.overview }}</p>
+            <div class="position-absolute voteAverage p-1">
+              {{ movie.vote_average | twodecimal }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
